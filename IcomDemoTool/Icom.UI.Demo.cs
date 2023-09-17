@@ -62,14 +62,12 @@ namespace Icom.UI
 
         private void cmdSend_Click(object sender, EventArgs e)
         {
-
-            //byte[] buffer = { 0x88, 0xE0, 0x19, 0x00 };
-            //byte[] buffer = { (byte)CIVSharp.CIV.CommandBytes.COMMAND_TRANCEIVER_ID_READ, 0x00 };
-            //myCIV.TransmitCommand(buffer);
-            //myCIV.AutoDetectrRadio();
-
-            byte[] buffer = { 0x1A, 0x00, 0x02, 0x00, 0x01 };
+            // Send read frequency command to radio
+            byte[] buffer = { 0x03 };
             myCIV.TransmitCommand(buffer);
+
+            // Read response from radio
+            byte[] response = myCIV.WaitForResponse(1000);
         }
 
         private void cmdFind_Click(object sender, EventArgs e)
