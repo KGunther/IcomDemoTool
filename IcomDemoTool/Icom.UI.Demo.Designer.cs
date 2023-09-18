@@ -43,29 +43,29 @@
             // lbPorts
             // 
             this.lbPorts.FormattingEnabled = true;
-            this.lbPorts.ItemHeight = 20;
-            this.lbPorts.Location = new System.Drawing.Point(39, 54);
-            this.lbPorts.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lbPorts.ItemHeight = 16;
+            this.lbPorts.Location = new System.Drawing.Point(35, 43);
+            this.lbPorts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lbPorts.Name = "lbPorts";
-            this.lbPorts.Size = new System.Drawing.Size(174, 104);
+            this.lbPorts.Size = new System.Drawing.Size(155, 84);
             this.lbPorts.TabIndex = 0;
             // 
             // lbRadios
             // 
             this.lbRadios.FormattingEnabled = true;
-            this.lbRadios.ItemHeight = 20;
-            this.lbRadios.Location = new System.Drawing.Point(250, 54);
-            this.lbRadios.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lbRadios.ItemHeight = 16;
+            this.lbRadios.Location = new System.Drawing.Point(222, 43);
+            this.lbRadios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lbRadios.Name = "lbRadios";
-            this.lbRadios.Size = new System.Drawing.Size(187, 104);
+            this.lbRadios.Size = new System.Drawing.Size(167, 84);
             this.lbRadios.TabIndex = 1;
             // 
             // cmdConnect
             // 
-            this.cmdConnect.Location = new System.Drawing.Point(39, 171);
-            this.cmdConnect.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmdConnect.Location = new System.Drawing.Point(35, 137);
+            this.cmdConnect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmdConnect.Name = "cmdConnect";
-            this.cmdConnect.Size = new System.Drawing.Size(176, 32);
+            this.cmdConnect.Size = new System.Drawing.Size(156, 26);
             this.cmdConnect.TabIndex = 2;
             this.cmdConnect.Text = "Connect";
             this.cmdConnect.UseVisualStyleBackColor = true;
@@ -73,20 +73,20 @@
             // 
             // mlText
             // 
-            this.mlText.Location = new System.Drawing.Point(39, 297);
-            this.mlText.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.mlText.Location = new System.Drawing.Point(35, 238);
+            this.mlText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mlText.Multiline = true;
             this.mlText.Name = "mlText";
             this.mlText.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.mlText.Size = new System.Drawing.Size(398, 193);
+            this.mlText.Size = new System.Drawing.Size(354, 155);
             this.mlText.TabIndex = 3;
             // 
             // cmdSend
             // 
-            this.cmdSend.Location = new System.Drawing.Point(250, 212);
-            this.cmdSend.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmdSend.Location = new System.Drawing.Point(222, 170);
+            this.cmdSend.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmdSend.Name = "cmdSend";
-            this.cmdSend.Size = new System.Drawing.Size(189, 34);
+            this.cmdSend.Size = new System.Drawing.Size(168, 27);
             this.cmdSend.TabIndex = 4;
             this.cmdSend.Text = "Send";
             this.cmdSend.UseVisualStyleBackColor = true;
@@ -94,10 +94,10 @@
             // 
             // cmdFind
             // 
-            this.cmdFind.Location = new System.Drawing.Point(250, 168);
-            this.cmdFind.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmdFind.Location = new System.Drawing.Point(222, 134);
+            this.cmdFind.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmdFind.Name = "cmdFind";
-            this.cmdFind.Size = new System.Drawing.Size(189, 35);
+            this.cmdFind.Size = new System.Drawing.Size(168, 28);
             this.cmdFind.TabIndex = 5;
             this.cmdFind.Text = "Find Radio";
             this.cmdFind.UseVisualStyleBackColor = true;
@@ -105,10 +105,10 @@
             // 
             // cmdDisconnect
             // 
-            this.cmdDisconnect.Location = new System.Drawing.Point(39, 217);
-            this.cmdDisconnect.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmdDisconnect.Location = new System.Drawing.Point(35, 174);
+            this.cmdDisconnect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmdDisconnect.Name = "cmdDisconnect";
-            this.cmdDisconnect.Size = new System.Drawing.Size(176, 29);
+            this.cmdDisconnect.Size = new System.Drawing.Size(156, 23);
             this.cmdDisconnect.TabIndex = 6;
             this.cmdDisconnect.Text = "Disconnect";
             this.cmdDisconnect.UseVisualStyleBackColor = true;
@@ -116,18 +116,18 @@
             // 
             // txtFrequency
             // 
-            this.txtFrequency.Location = new System.Drawing.Point(39, 257);
-            this.txtFrequency.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtFrequency.Location = new System.Drawing.Point(35, 206);
+            this.txtFrequency.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtFrequency.Name = "txtFrequency";
-            this.txtFrequency.Size = new System.Drawing.Size(172, 26);
+            this.txtFrequency.Size = new System.Drawing.Size(153, 22);
             this.txtFrequency.TabIndex = 7;
             // 
             // cmdTune
             // 
-            this.cmdTune.Location = new System.Drawing.Point(250, 254);
-            this.cmdTune.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmdTune.Location = new System.Drawing.Point(222, 203);
+            this.cmdTune.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmdTune.Name = "cmdTune";
-            this.cmdTune.Size = new System.Drawing.Size(189, 34);
+            this.cmdTune.Size = new System.Drawing.Size(168, 27);
             this.cmdTune.TabIndex = 8;
             this.cmdTune.Text = "Tune";
             this.cmdTune.UseVisualStyleBackColor = true;
@@ -135,9 +135,9 @@
             // 
             // Demo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(458, 511);
+            this.ClientSize = new System.Drawing.Size(407, 409);
             this.Controls.Add(this.cmdTune);
             this.Controls.Add(this.txtFrequency);
             this.Controls.Add(this.cmdDisconnect);
@@ -147,9 +147,10 @@
             this.Controls.Add(this.cmdConnect);
             this.Controls.Add(this.lbRadios);
             this.Controls.Add(this.lbPorts);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Demo";
             this.Text = "Icom Demo";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Demo_FormClosed);
             this.Load += new System.EventHandler(this.IcomDemo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

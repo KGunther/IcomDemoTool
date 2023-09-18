@@ -2,6 +2,7 @@
 // using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Icom.CIV;
+using Serilog;
 
 namespace Icom.UI
 {
@@ -11,6 +12,13 @@ namespace Icom.UI
         public Demo()
         {
             InitializeComponent();
+            Log.Logger = new LoggerConfiguration()
+                .WriteTo.File(System.IO.Path.GetTempPath() + @"KWC Software\" + "IcomDemoTool_.log", rollingInterval: RollingInterval.Day)
+                .MinimumLevel.Debug()
+                .CreateLogger();
+            Log.Information(" ");
+            Log.Information("IcomDemoTool start -------------------------------------------------------");
+
         }
 
         private void IcomDemo_Load(object sender, EventArgs e)
@@ -33,7 +41,7 @@ namespace Icom.UI
             if (!myCIV.OpenSerialPort(lbPorts.SelectedItem.ToString(), 19200))
             {
                 string exceptionText = myCIV.GetSerialException().Message;
-                MessageBox.Show("Unable to open port " + lbPorts.SelectedItem.ToString() + ": " + exceptionText, "Error opening port: ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.Fatal("Unable to open port " + lbPorts.SelectedItem.ToString() + ": " + exceptionText, "Error opening port: ");
             }
             else
             {
@@ -74,11 +82,11 @@ namespace Icom.UI
 
         private void cmdFind_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("CmdFind_Click entered changing cursor");
+            Log.Debug("CmdFind_Click entered changing cursor");
             Cursor.Current = Cursors.WaitCursor;
-            MessageBox.Show("calling MyCIV.AutodetectRadio");
+            Log.Debug("calling MyCIV.AutodetectRadio");
             Core.RadioInfo radioInfo = myCIV.AutoDetectRadio(true);
-            MessageBox.Show("Back from AutodetectRadio");
+            Log.Debug("Back from AutodetectRadio");
             Cursor.Current = Cursors.Default;
             if (radioInfo.RadioID != Core.Radio.NULL_RADIO)
             {
@@ -89,10 +97,14 @@ namespace Icom.UI
                 cmdSend.Enabled = true;
                 cmdTune.Enabled = true;
                 MessageBox.Show("Found radio: " + radioInfo.RadioName + " on port " + radioInfo.CommPort + " with baud rate " + radioInfo.baudRate.ToString() + " with address " + radioInfo.RadioAddress.ToString("X2"), "Radio Autodetect", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Log.Information("Found radio: " + radioInfo.RadioName + " on port " + radioInfo.CommPort + " with baud rate " + radioInfo.baudRate.ToString() + " with address " + radioInfo.RadioAddress.ToString("X2"), "Radio Autodetect");
+
             }
             else
             {
                 MessageBox.Show("No ICOM radio(s) found", "Radio Autodetect", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Log.Fatal("No ICOM radio(s) found", "Radio Autodetect");
+
             }
         }
 
@@ -115,6 +127,12 @@ namespace Icom.UI
             {
                 myCIV.TuneFrequency(frequency, Core.RadioMode.MODE_LSB);
             }
+        }
+
+        private void Demo_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Log.Debug("Form closed");
+            Log.CloseAndFlush();
         }
     }
 }
