@@ -1,4 +1,5 @@
 ﻿using System;
+// using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Icom.CIV;
 
@@ -69,11 +70,15 @@ namespace Icom.UI
             // Read response from radio
             byte[] response = myCIV.WaitForResponse(1000);
         }
+    
 
         private void cmdFind_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("CmdFind_Click entered changing cursor");
             Cursor.Current = Cursors.WaitCursor;
+            MessageBox.Show("calling MyCIV.AutodetectRadio");
             Core.RadioInfo radioInfo = myCIV.AutoDetectRadio(true);
+            MessageBox.Show("Back from AutodetectRadio");
             Cursor.Current = Cursors.Default;
             if (radioInfo.RadioID != Core.Radio.NULL_RADIO)
             {
