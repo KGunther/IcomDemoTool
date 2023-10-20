@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 // using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Icom.CIV;
@@ -17,7 +18,7 @@ namespace Icom.UI
                 .MinimumLevel.Debug()
                 .CreateLogger();
             Log.Information(" ");
-            Log.Information("IcomDemoTool start -------------------------------------------------------");
+            Log.Information("Starting {0}", Assembly.GetExecutingAssembly().FullName);
 
         }
 
@@ -33,6 +34,7 @@ namespace Icom.UI
                 lbRadios.Items.Add(radio);
             foreach (string port in ports)
                 lbPorts.Items.Add(port);
+            Log.Debug("Form load complete");
         }
 
         private void cmdConnect_Click(object sender, EventArgs e)
@@ -84,9 +86,9 @@ namespace Icom.UI
         {
             Log.Debug("CmdFind_Click entered changing cursor");
             Cursor.Current = Cursors.WaitCursor;
-            Log.Debug("calling MyCIV.AutodetectRadio");
-            Core.RadioInfo radioInfo = myCIV.AutoDetectRadio(true);
-            Log.Debug("Back from AutodetectRadio");
+            Log.Debug("calling MyCIV.FindARadio");
+            Core.RadioInfo radioInfo = myCIV.FindARadio(true);
+            Log.Debug("Back from FindARadio");
             Cursor.Current = Cursors.Default;
             if (radioInfo.RadioID != Core.Radio.NULL_RADIO)
             {
@@ -131,7 +133,7 @@ namespace Icom.UI
 
         private void Demo_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Log.Debug("Form closed");
+            Log.Debug("Form closed - Now flushing");
             Log.CloseAndFlush();
         }
     }
